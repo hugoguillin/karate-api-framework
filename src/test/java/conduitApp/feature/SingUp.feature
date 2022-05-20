@@ -4,7 +4,7 @@ Feature: Sing up new user
         Given url baseUrl
         
     Scenario: New user sing up
-        Given def userData = {email: "someuserñ@karate.com", username: "someuserñ"}
+        Given def userData = {email: "someuser@karate.com", username: "someuser"}
         Given path 'users'
         And request
         """

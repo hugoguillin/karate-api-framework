@@ -15,7 +15,8 @@ function fn() {
         config.userPass = 'karate'
   }
 
-/* The authorization token is set at a global level, so that it's not required to create a new token for
+/*
+*  The authorization token is set at a global level, so that it's not required to create a new token for
 *  every authenticated request.
 *  If some of the request need to be sent w/o authentication, then the *helpers/CreateToken.feature*
 *  has to be invoked in the background section in every .feature file that is needed.

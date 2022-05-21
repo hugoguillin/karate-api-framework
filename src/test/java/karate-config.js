@@ -18,8 +18,8 @@ function fn() {
 /*
 *  The authorization token is set at a global level, so that it's not required to create a new token for
 *  every authenticated request.
-*  If some of the request need to be sent w/o authentication, then the *helpers/CreateToken.feature*
-*  has to be invoked in the background section in every .feature file that is needed.
+*  If some of the request needed to be sent w/o authentication, then the *helpers/CreateToken.feature* file
+*  would have to be invoked in the background section in every .feature file that were needed.
 */
   var accessToken = karate.callSingle('classpath:helpers/CreateToken.feature', config).authToken
   karate.configure('headers', {Authorization: "Token " + accessToken})

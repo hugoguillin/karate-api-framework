@@ -1,6 +1,7 @@
 Feature: Sing up new user
     
     Background: Precondition
+#       Reading a helper .java class
         * def dataGenerator = Java.type('helpers.DataGenerator')
         * def randomEmail = dataGenerator.getRandomEmail()
         * def randomUsername = dataGenerator.getRandomUsername()
@@ -52,13 +53,13 @@ Feature: Sing up new user
 
     Scenario: Sign up with existing username fails with appropriate error message
         Given path 'users'
-#       The userName "karatehugo" is the one I used when signed up. You should change it for yours.
+#       The userName (set in karate-config.js) is the one I used when signed up. You should change it for yours.
         And request
         """
             {
                 user: {
                     email: #(randomEmail),
-                    username: "karatehugo",
+                    username: #(userName),
                     password: "karate"
                 }
             }
@@ -89,7 +90,7 @@ Feature: Sing up new user
         Examples:
             | email          | password    | username          | errorStatus | errorMessage                                       |
             | #(userEmail)   | #(userPass) | #(randomUsername) | 422         | {"errors":{"email":["has already been taken"]}}    |
-            | #(randomEmail) | #(userPass) | karatehugo        | 422         | {"errors":{"username":["has already been taken"]}} |
+            | #(randomEmail) | #(userPass) | #(userName)       | 422         | {"errors":{"username":["has already been taken"]}} |
             | email          | #(userPass) | #(randomUsername) | 422         | {"errors":{"email":["has already been taken"]}}    |
             |                | #(userPass) | #(randomUsername) | 422         | {"errors":{"email":["can't be blank"]}}            |
             | #(randomEmail) |             | #(randomUsername) | 422         | {"errors":{"password":["can't be blank"]}}         |

@@ -14,6 +14,7 @@ Feature: Test for the home page
       And match each response.tags == '#string'
 
   Scenario: Get articles from the page
+#     Reading a helper .js file
       * def isValidDateFormat = read('classpath:helpers/TimeValidator.js')
 
   #   params is where query params are specified
@@ -21,8 +22,6 @@ Feature: Test for the home page
       Given path 'articles'
       When method Get
       Then status 200
-  #   #[number] is the way of checking the length of the array
-      And match response.articles == '#[5]'
       And match response.articlesCount == "#number"
 #     ##string (with 2#) means that the field type may be null or string. Also may mean this field is optional in the response
       And match response.author[*].bio == '##string'

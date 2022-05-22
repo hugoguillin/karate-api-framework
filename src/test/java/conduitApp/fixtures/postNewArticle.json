@@ -1,0 +1,11 @@
+{
+  "article": {
+    "tagList": [
+      "test",
+      "pruebas"
+    ],
+    "title": "A title",
+    "description": "Article created from IDE",
+    "body": "Let's see if this works"
+  }
+}

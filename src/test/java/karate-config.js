@@ -9,9 +9,11 @@ function fn() {
   }
   if (env == 'dev') {
         config.userEmail = 'karate@karate.com'
+        config.userName = 'karatehugo'
         config.userPass = 'karate'
   } else if (env == 'qa') {
-        config.userEmail = 'karate@karate.com'
+        config.userEmail = 'karateqa@karate.com'
+        config.userName = 'karatehugo'
         config.userPass = 'karate'
   }
 

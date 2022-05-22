@@ -8,7 +8,7 @@ The aim of this project is to serve as a start point for testers aiming to devel
 - **Main features**:
   - It is open source with an active community behind.
   - Features a powerful assertion library.
-  - Readable tests written in Gherkin.
+  - Generates an intuitive html report after every run.
 - **Main drawbacks**:
   - It doesn't provide Intellisense support for IDEs, so you have to be really careful to avoid spelling mistakes.
 ### Which application is being tested?

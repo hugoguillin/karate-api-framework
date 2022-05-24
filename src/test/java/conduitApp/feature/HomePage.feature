@@ -2,6 +2,11 @@ Feature: Test for the home page
 
   Background: Define URL
       Given url baseUrl
+#     Hooks
+      * print 'This text is executed before each scenario of this feature file'
+      * callonce print 'This text is executed just once, even if there are multiple scenarios, at the beginning'
+      * configure afterScenario = function(){karate.log('This text is executed after each scenario of this feature file')}
+      * configure afterFeature = function(){karate.log('This text is executed just once, after all scenarios have run')}
 
   Scenario: Get all tags
       Given path 'tags'
